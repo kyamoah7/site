@@ -13,7 +13,7 @@ $(document).ready( function(){
     var currentSlide = $('.slide.active');
     var nextSlide = currentSlide.next();
 
-    currentSlide.fadeOut(300).removeClass('active');
+    currentSlide.slideToggle(300).removeClass('active');
     nextSlide.slideToggle(300).addClass('active');
     if(nextSlide.length == 0){
       $('.slide').first().slideToggle(300).addClass('active');
@@ -23,7 +23,7 @@ $(document).ready( function(){
     var currentSlide = $('.slide.active');
     var prevSlide = currentSlide.prev();
 
-    currentSlide.fadeOut(300).removeClass('active');
+    currentSlide.slideToggle(300).removeClass('active');
     prevSlide.slideToggle(300).addClass('.active');
 
     if(prevSlide.length == 0){
