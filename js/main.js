@@ -7,12 +7,18 @@ $(document).ready( function(){
       scrollTop : $(linkHref).offset().top - headerHeight
     }, 1000);
     e.preventDefault();
-  })
+  });
 
   /* carousel for about div*/
+  var bio = $('#bio');
+  var portfolio = $('#portfolio');
+  var about = $('.aboutword')
   $('#right-arrow').click(function(){
-    var bio = $('#bio');
+
     bio.slideToggle(300);
+    portfolio.addClass('deactive');
+    about.toggleClass('out');
+
     /*var currentSlide = $('.slide1.active');
     var nextSlide = currentSlide.next();
 
@@ -22,9 +28,14 @@ $(document).ready( function(){
       $('.slide').first().slideToggle(300).addClass('active');
     }*/
   });
+  $('#about').click(function(){
+
+  });
   $('#left-arrow').click(function(){
-    var portfolio = $('#portfolio');
+
     portfolio.slideToggle(300);
+    portfolio.addClass('deactive');
+    about.toggleClass('out');
     /*var currentSlide = $('.slide2.active');
     var prevSlide = currentSlide.prev();
 
