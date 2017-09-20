@@ -15,7 +15,7 @@ $(document).ready( function(){
   var about = $('.aboutword')
   $('#right-arrow').click(function(){
 
-    bio.slideToggle(300);
+    bio.slideToggle(350);
     portfolio.addClass('deactive');
     about.toggleClass('out');
 
@@ -47,6 +47,6 @@ $(document).ready( function(){
     }*/
   });
   $('.burger-nav').click(function(){
-      $('nav ul ').toggleClass('open');
+      $('nav ul ').addClass('open');
     });
 });
