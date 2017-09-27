@@ -48,20 +48,23 @@ nav ul li a{
 }
 
 .container{
-  display: flex;
-  flex-wrap: wrap;
-  align-content: space-between;
+
+
 }
 .box1{
-  flex:1;
+  grid-column: 1/3;
+  grid-row: 1;
 }
 .box2{
-  flex:2;
+  grid-column: 2/3;
+  grid-row: 1;
 }
 .box3{
-  flex:1;
+  grid-column: 3/3;
+  grid-row: 1;
 }
 #home{
+  position: relative;
   width:100%;
   height: 1000px;
   background-image: url("../images/aboutbkg.jpg") ;
@@ -95,8 +98,10 @@ height: inherit;
 /* bootstrap row created for logo placement*/
 
 #logo{
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
   margin-top: ;
-  position: absolute;
+  position: relative;
   z-index: 2;
   background: rgba(255, 255, 255, 0.7);
   top: 0;
@@ -111,43 +116,53 @@ height: inherit;
 }
 
 #about{
+  position: relative;
   width:100%;
   height: 1000px;
   background-image: url("../images/homeBkg.jpg")  ;
   margin: 0;
   font-family: 'Alegreya Sans SC', sans-serif;
+  display: grid;
+  grid-template-columns: 1fr 1fr 3fr;
+
 }
 
 /*slides for carousel*/
-.slide1{
+.slide{
+
+  grid-column: 3/3;
+  grid-row: 1;
+grid-area="sld";
+
+  width:80%;
+  height:100%;
+  background-color: ;
+
+
+}
+/*.slide2{
   float: right;
-  position:;
+  position:absolute;
   width:100%;
   height:100%;
   background-color: ;
   display: none;
-  z-index: 1;
-}
-.slide2{
-  float: right;
-  position:;
-  width:100%;
-  height:100%;
-  background-color: ;
-  display: none;
-  z-index: 1;
-}
+  z-index: 2;
+}*/
 bio.active{
   display: block;
 }
-slide1.active{
+/*slide1.active{
   display: block;
 }
 slide2.active{
   display: block;
+}*/
+#bio.active{
+  display:block ;
 }
-.deactive{
-  display: none;
+#portfolio.active{
+  display:block ;
 }
 #controls h1{
 
@@ -157,26 +172,27 @@ slide2.active{
 
 
 #controls{
-
-position: absolute;
+grid-row: 1;
+grid-column: 1/2;
+position: ;
   display: grid;
-  width: 100%;
-  grid-template-columns: 2fr 3fr 3fr 2fr;
-grid-template-rows: 150px 150px 200px 200px;
+  width: ;
+  grid-template-columns:2fr 2fr 2fr;
+grid-template-rows: 150px 150px 200px ;
 grid-gap: 10px;
 grid-template-areas:
-  "to to to to"
-  "tp tp tp tp"
-  "lft . . rgt"
-  "bt bt bt bt";
+  ".to ."
+  ".lft ."
+  ".rgt .";
 
   z-index: 2;
 font-weight: 300;
   font-family: 'Alegreya Sans SC', sans-serif;
 text-align: center;
   cursor: pointer;
-  color: white;
+  color: #09244f;
   font-size: 2em;
+  background-color:  white;
 
 }
 .aboutword{
@@ -208,10 +224,11 @@ width: 100%
 
   font-size: 1em;
   z-index: 2;*/
-align-items: center;
+align-self: center;
   text-align: center;
-  border-radius:100%;
-  border:1px solid white;
+
+  border:1px #09244f;
+  border-style: solid none solid none;
   width: 150px;
   height: 150px;
   line-height:80px;
@@ -228,10 +245,9 @@ margin: auto;
   z-index: 2;*/
 margin: auto;
 text-align:  center;
-border-radius:100%;
-border:1px solid white;
+border-style: none none solid none;
+border-bottom:1px solid #09244f;
 width: 150px;
-height: 150px;
   line-height:80px;
 }
 #BotControlBar{
@@ -242,8 +258,9 @@ height: 150px;
  background-color: ;
 }
 #bio{
-
-  background: -webkit-linear-gradient(top,rgba(255,0,0,0),rgba(255,0,0,1));
+  display: none;
+position: relative;
+/*  background: -webkit-linear-gradient(top,rgba(255,0,0,0),rgba(255,0,0,1));*/
   padding-top: 0%;
   color: white;
 }
@@ -261,6 +278,7 @@ height: 150px;
   grid-template-columns: 1fr 3fr 1fr ;
 grid-template-rows: 50px 50px 100px 150px 150px 150px;
 grid-gap: 10px;
+
 grid-template-areas:
 
   ". a ."
@@ -278,13 +296,16 @@ grid-template-areas:
 }
 .bio2{
   grid-area: b;
-  border: 1px white solid;
+  border:1px white;
+  border-style: solid none solid none;
   padding: 5px;
 
 }
 
 #portfolio{
-  background-color: rgba(255, 210, 77,0.5);
+  display: none;
+  position: relative;
+/*  background-color: rgba(255, 210, 77,0.5);*/
   padding-top: 0%;
 
 }
@@ -342,6 +363,7 @@ text-align: center;
   background-color: rgba(0, 0, 102,0.5);
 }
 #contact{
+  position: relative;
   width:100%;
   height: 1000px;
   background-image: url("../images/aboutbkg.jpg") ;
@@ -380,35 +402,26 @@ text-align: center;
   #controls{
 
 
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 250px 200px 200px 200px 100px;
-  grid-gap: 10px;
-  grid-template-areas:
-    "to to to to"
-    "to to to to"
-    "tp tp tp tp"
-    "tp tp tp tp"
-    "lft . . rgt";
-    cursor: pointer;
-    color: white;
-    font-size: 1em;
+
 
   }
   #BotControlBar{
     display: none;
   }
   #left-arrow {
-    width: 100px;
-    height: 20px;
+    width: 50px;
+    height: 50px;
     border-radius: 0%;
 line-height:0px;
 padding: 0px;
+font-size: .5em;
   }
   #right-arrow{
-    width: 100px;
-    height: 20px;
+    width: 50px;
+    height: 50px;
 border-radius: 0%;
 line-height:0px;
+font-size: .5em
   }
   .bio1{
     grid-column: 1 ;
@@ -428,8 +441,8 @@ grid-gap: 10px;
 grid-template-rows:  100px 200px 200px 200px;
 overflow-y: scroll;
 height: 750px;
-
-
+overflow-x: hidden;
+cursor: cell;
   }
 
   .parastyle{}
@@ -481,7 +494,7 @@ height: 750px;
   }
   .bio2{
     grid-area: b;
-    border-top:  1px white solid;
+
       border:1px white;
       border-style: solid none solid none;
     padding: 5px;
