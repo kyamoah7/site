@@ -38,7 +38,10 @@ $(document).ready( function(){
       $('.slide').last().slideToggle(300).addClass('.active');
     }
   });
-  $('.burger-nav').click(function(){
-      $('nav ul ').addClass('open');
-    });
+  $('.menu-toggle').click(function() {
+
+    $('.site-nav').toggleClass('site-nav--open', 500);
+    $(this).toggleClass('open');
+
+  })
 });

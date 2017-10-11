@@ -11,7 +11,7 @@ header{
   background-color: #09244f;
   width: 100%;
   height: 70px;
-  z-index: 3;
+  z-index: 4;
   color: white;
 }
 header h2{
@@ -24,7 +24,7 @@ header h2 span{
   font-size: .65em;
 }
 /*navigation*/
-nav{
+/*nav{
   float: right;
   width: 50%;
   text-align: right;
@@ -45,23 +45,93 @@ nav ul li a{
   color: white;
   font-size: 1.5em;
   font-weight: 400;
-}
+}*/
+
+.site-nav{
+top: 100%;
+right: 0;
+  position: absolute;
+  background:#09244f;
+  height:0px;
+  overflow: hidden;
+  }
+  .site-nav--open{
+    height:auto;
+  }
+  .site-nav ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .site-nav li{
+    border-bottom: 1px solid white;
+  }
+  .site-nav li:last-child{
+    border-bottom: none;
+  }
+  .site-nav a{
+    display: block;
+    color: white;
+    padding: 2em 6em;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  .site-nav a:hover,
+  .site-nav a:focus{
+    background: grey;
+  }
+  .menu-toggle{
+    padding:1em;
+    position: absolute;
+    top:.5em;
+    right: .5em;
+    cursor: pointer;
+  }
+  .hamburger,
+  .hamburger::before,
+  .hamburger::after {
+    display: block;
+    content: "";
+    background: white;
+    height: 3px;
+    width:1.75em;
+    border-radius:3px;
+    transition: all ease-in-out 500ms;
+  }
+  .hamburger::before {
+    transform: translateY(-7px);
+  }
+  .hamburger::after {
+    transform: translateY(3px);
+  }
+  .open .hamburger{
+    transform: rotate(45deg);
+    }
+    .open .hamburger::before{
+      opacity: 0;
+    }
+    .open .hamburger::after{
+      transform:translate(-3px) rotate(-90deg);
+      }
 
 .container{
-
-
+position: relative;
+display: grid;
+grid-column-template:1fr 2fr 1fr;
+grid-template-areas:
+". . ."
+"l lg r"
+". . ."
 }
 .box1{
-  grid-column: 1/3;
-  grid-row: 1;
+grid-area: l;
 }
 .box2{
-  grid-column: 2/3;
-  grid-row: 1;
+grid-area:lg;
+
 }
 .box3{
-  grid-column: 3/3;
-  grid-row: 1;
+grid-area:r;
 }
 #home{
   position: relative;
@@ -74,17 +144,7 @@ nav ul li a{
 
 }
 /*bootstrap removal of margins and padding*/
-.no-gutters {
-  margin-right: 0;
-  margin-left: 0;
 
-  > .col,
-  > [class*="col-"] {
-    padding-right: 0;
-    padding-left: 0;
-
-  }
-}
 /*.across{
 display: inline;
 height: inherit;
@@ -98,9 +158,9 @@ height: inherit;
 /* bootstrap row created for logo placement*/
 
 #logo{
-  display: grid;
-  grid-template-columns: 1fr 3fr 1fr;
-  margin-top: ;
+
+
+
   position: relative;
   z-index: 2;
   background: rgba(255, 255, 255, 0.7);
@@ -123,17 +183,17 @@ height: inherit;
   margin: 0;
   font-family: 'Alegreya Sans SC', sans-serif;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 3fr;
-  grid-template-rows: 50px 50px 100px 150px 150px 150px;
+  grid-template-columns: 1fr 2fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
   grid-gap: 10px;
 
-  grid-template-areas:
+  /*grid-template-areas:
 
     ". . a ."
     ". . . ."
     ". b b ."
     ". b b ."
-      ". . . .";
+      ". . . .";*/
 color: white;
 }
 #bio{
@@ -150,17 +210,44 @@ position: relative;
 
 
 .bio1{
-  grid-area: a;
-
+  position: relative;
+text-align: right;
+padding-top: 80%;
 }
+.bio1 h1{
+  margin-bottom: 2%;
+  font-size: 3em;
+}
+
+
+
 .bio2{
-  grid-area: b;
+  grid-column: 2;
+grid-row:2;
+  position: relative;
+  z-index:1;
   border:1px white;
   border-style: solid none solid none;
   padding: 5px;
-  background-color: white;
-  color: #09244f;
+  background-color: ;
+  color: white;
+  /*color: #09244f;*/
 
+}
+#video-background{
+  grid-column:3;
+  grid-row: 2;
+  position: relative;
+  z-index: 3;
+left: -10vw;
+  top: 30vh;
+  width:250px;
+  height: 150px;
+  background-color: none;
+  border:1px white;
+  border-style:none solid solid none;
+
+  padding: 5px;
 }
 
 
@@ -338,47 +425,91 @@ text-align: center;
     background-image: url("../images/homeBkg.jpg")  ;
   margin:0;
 }
+@media (min-width: 700px){
+  .menu-toggle{
+    display: none;
+  }
+  .site-nav{
+    height:auto;
+  position: relative;
+  background:transparent;
+  float: right;
+    }
+    .site-nav li{
+      display: inline-block;
+      border:none;
+    }
+    .site-nav a{
+      padding: 0;
+      margin-left: 3em;
+    }
+    .site-nav a:hover,
+    .site-nav a:focus{
+      background: transparent;
+    }
+
+}
 @media only screen and (max-width: 420px){
-  .burger-nav{
-    display: block;
-    height: 40px;
-    width: 100%;
-    background: url()no-repeat 98% center;
-    background: url(../images/threelines.png)no-repeat 98% center;
-    cursor: pointer;
+
+  
+
+
+  .container{
+    grid-template-columns: 1fr 1fr 1fr;
   }
-  nav ul{
-    overflow: hidden;
-    background:#747474;
-    height:0;
+  .box2 img{
+    width: 250px;
+    margin:0;
+
   }
-  nav ul.open{
-    height: auto;
+  .box2{
+
+
   }
-  nav ul li{
-    float: left;
-    text-align: left;
-    width: 100%;
-    margin: 0;
-  }
-  nav ul li a{
-    color: #fff;
-    padding: 10px;
-    border-bottom: 1px solid #747474;
-    display: block;
-    margin: 0;
+  .box3{
+
   }
   #about{
-    grid-template-columns: 2fr 3fr;
+    grid-template-columns: 1fr 2fr 2fr 1fr;
+    grid-template-rows: 50px 75px 500px 100px;
+
+    grid-template-areas:
+    ". . . ."
+    ". o o ."
+    ". p p ."
+    ". t t .";
   }
+  .bio1{
+    grid-area: o;
+    padding: 0;
+    text-align: center;
+    line-height: 0;
+  }
+  .bio2{
+    grid-area:p;
+  }
+  #video-background{
+    grid-area:t;
+    left: 0vw;
+      top: 0vh;
+  }
+
   #controls{
 
-width: 80px;
-
-height:1000px;
+    margin: auto;
+width: 300px;
+height: auto;
+grid-template-areas:
+  ". to to ."
+  ". lft rgt ."
+  ". . . .";
   }
   #BotControlBar{
     display: none;
+  }
+  #topControlBar{
+    text-align: center;
+    margin: auto;
   }
   #left-arrow {
     width: 50px;
@@ -386,29 +517,24 @@ height:1000px;
     border-radius: 0%;
 line-height:0px;
 padding: 0px;
-font-size: .35em;
-margin:1%;
-line-height: 40px;
+font-size: .5em;
+margin:auto;
+line-height: 30px;
+text-align: left;
   }
   #right-arrow{
     width: 50px;
     height: 50px;
 border-radius: 0%;
 line-height:0px;
-font-size: .35em;
-margin:1%;
-line-height: 40px;
+font-size: .5em;
+margin:auto;
+line-height: 30px;
+border:1px;
+border-style: solid none solid none;
+text-align: right;
   }
-  .bio1{
-    grid-column: 1 ;
-    grid-row: 1 ;
-    padding: 3%;
-  }
-  .bio2{
-    grid-column: 1 ;
-    grid-row: 2 ;
-    padding: 3%;
-  }
+
   .projectbox{
     position: inherit;
 grid-template-columns: 1fr;
@@ -421,60 +547,7 @@ overflow-x: hidden;
 cursor: cell;
   }
 
-  .parastyle{}
-  .image1{
-    grid-column: 1 ;
-    grid-row: 1 ;
-    padding: 3%;
 
-  }
-  .image2{
-    grid-column: 1 ;
-    grid-row: 2 ;
 
-  }
-  .image3{
-    grid-column: 1 ;
-    grid-row: 3 ;
 
-  }
-  .image4{
-    grid-column: 1 ;
-    grid-row: 4 ;
-
-  }
-  .image5{
-    grid-column: 1 ;
-    grid-row: 5 ;
-
-  }
-  .aboutme{
-    display: grid;
-    grid-template-columns: 1fr 4fr 1fr ;
-  grid-template-rows: 50px 50px 100px 300px 300px 150px;
-  grid-gap: 10px;
-  grid-template-areas:
-
-    ". a ."
-    ". . ."
-    ". b ."
-    ". b ."
-      ". . .";
-    background-color: ;
-    width:80%;
-    margin:20% auto;
-  }
-  .bio1{
-    grid-area: a;
-
-  }
-  .bio2{
-    grid-area: b;
-
-      border:1px white;
-      border-style: solid none solid none;
-    padding: 5px;
-    margin: auto;
-
-  }
 }
