@@ -268,19 +268,20 @@ left: -10vw;
   position: relative;
   width: 100%;
   height: 1000px;
-  background-color: blue;
+  background-color: ;
 }
 /*slides for carousel*/
 .slide{
 display: none;
 position: absolute;
-
+font-family: 'Alegreya Sans SC', sans-serif;
   width:100%;
   height:100%;
-  background-color:gray ;
+  background: rgba(112, 112, 112, 0.7);
 
 
 }
+
 .slide.active{
   display: block;
 }
@@ -367,52 +368,44 @@ height: 50px;
 .projectbox{
   display: grid;
   grid-template-columns: 1fr 3fr 3fr 1fr ;
-grid-template-rows:  100px 200px 250px 50px;
+grid-template-rows:  100px 100px 100px 100px;
 grid-gap: 10px;
 color: white;
 grid-template-areas:
 
-  ". a a ."
-  ". b c ."
-  ". d e ."
+  ". . . ."
+  ". a b ."
+  ". a b ."
   ". . . .";
   background-color: ;
   width:80%;
   margin:20% auto;
   z-index: 2;
+font: inherit;
+}
 
-}
-.parastyle{
-  width:100%;
-  border: 1px white solid;
-text-align: center;
-}
  .image1 h1{
 margin: 0;
 }
-.image1{
-
+.projecttext{
+border: 1px white solid;
 grid-area: a;
 text-align: center;
+background-color: white;
+color:#09244f;
 
 
 }
-.image2{
+.image1{
   grid-area: b;
   margin: auto;
+  border: 1px white solid;
+  width: 100%;
+  height: 100%;
+  border-style: solid none solid none;
+
 }
-.image3{
-  grid-area: c;
-  margin: auto;
-}
-.image4{
-  grid-area: d;
-  margin: auto;
-}
-.image5{
-  grid-area: e;
-  margin: auto;
-}
+
 
 #design{
   background-color: rgba(0, 0, 102,0.5);
@@ -430,10 +423,13 @@ text-align: center;
     display: none;
   }
   .site-nav{
+
+top:50%;
     height:auto;
   position: relative;
-  background:transparent;
+  background:;
   float: right;
+  padding-right: 5%;
     }
     .site-nav li{
       display: inline-block;
@@ -451,7 +447,7 @@ text-align: center;
 }
 @media only screen and (max-width: 420px){
 
-  
+
 
 
   .container{
