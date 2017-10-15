@@ -117,7 +117,8 @@ right: 0;
 .container{
 position: relative;
 display: grid;
-grid-column-template:1fr 2fr 1fr;
+grid-template-columns:1fr 2fr 1fr;
+grid-template-rows: 200px 400px 100px;
 grid-template-areas:
 ". . ."
 "l lg r"
@@ -128,6 +129,7 @@ grid-area: l;
 }
 .box2{
 grid-area:lg;
+justify-self: center;
 
 }
 .box3{
@@ -139,7 +141,7 @@ grid-area:r;
   height: 1000px;
   background-image: url("../images/aboutbkg.jpg") ;
   margin:0;
-  z-index: 2;
+  z-index: 1;
 
 
 }
@@ -172,7 +174,7 @@ height: inherit;
 
 }
 #logo img{
-  margin: 20% 20% 0 20%;
+  margin: ;
 }
 
 #about{
@@ -532,15 +534,31 @@ text-align: right;
   }
 
   .projectbox{
-    position: inherit;
+
+
 grid-template-columns: 1fr;
-    width: 350px;
+    width:;
 grid-gap: 10px;
-grid-template-rows:  100px 200px 200px 200px;
-overflow-y: scroll;
-height: 750px;
-overflow-x: hidden;
-cursor: cell;
+grid-template-rows: 100px 100px 200px 50px 150px 50px;
+grid-template-areas:
+"."
+"."
+"a"
+"."
+"b"
+".";
+height: ;
+
+  }
+  .projecttext{
+    grid-area: a;
+    width: 70%;
+  }
+  .image1{
+    grid-area:b;
+    width:50%;
+    height:0;
+    margin:auto;
   }
 
 
