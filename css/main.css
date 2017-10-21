@@ -410,7 +410,19 @@ justify-self:center;
   width: 100%;
   height: 100%;
   border-style: solid none solid none;
-
+  background: url('../images/datingInD.jpg')no-repeat center;
+}
+.image2{
+grid-row:2/3;
+grid-column: 2;
+/*  grid-area: b;*/
+justify-self:center;
+  margin: auto;
+  border: 1px white solid;
+  width: 100%;
+  height: 100%;
+  border-style: solid none solid none;
+  background: url('../images/seatres.jpg')no-repeat center;
 }
 
 
@@ -438,26 +450,38 @@ justify-self:center;
   grid-row:2/3;
   width:100%;
   height:;
-  border: solid white 1px;
-  justify-self:left;
-background:url("../images/linkedIn.svg")no-repeat center;
+  border: ;
+
+  justify-self:center;
+/*background:url("../images/linkedIn.svg")no-repeat center;*/
+}
+.linkedIn img{
+display: block;
+margin: auto;
 }
 .gitHub{
   position: relative;
   width: 100%;
   grid-column:2;
   grid-row:2/3;
-border: solid white 1px;
+border: ;
 
 
-  background:url("../images/gitHub.svg")no-repeat center;
+  /*background:url("../images/gitHub.svg")no-repeat center;*/
 
+}
+.gitHub img{
+  display: block;
+  margin: auto;
 }
 .mediaInfo{
   grid-column-start: 2;
   grid-column-end: 4;
   grid-row:3/3;
   border: white solid 1px;
+  font-family: 'Alegreya Sans SC', sans-serif;
+  color: white;
+  text-align: center;
 }
 
 
@@ -524,10 +548,31 @@ top:50%;
     padding: 0;
     text-align: center;
     line-height: 0;
+
   }
   .bio2{
     grid-area:p;
+    overflow-y: scroll;
   }
+  #style-1::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+#style-1::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+#style-1::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #555;
+}
   #video-background{
     grid-area:t;
     left: 0vw;
@@ -577,19 +622,7 @@ text-align: right;
 
   .projectbox{
 
-/*margin: 0;
-grid-template-columns:2fr 2fr 2fr;
-    width:;
-grid-gap: 10px;
-grid-template-rows: 100px 100px 200px 50px 150px 50px;
-grid-template-areas:
-". . ."
-". . ."
-". a ."
-". . ."
-". b ."
-". . .";
-height: ;*/
+
 grid-template-rows: 100px 100px 200px 300px ;
 
   }
@@ -611,7 +644,7 @@ grid-template-rows: 100px 100px 200px 300px ;
     background: url('../images/datingInDPhone.jpg')no-repeat center;
   }
   .mediaContainer{
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: 1fr 3fr 1fr;
     grid-template-rows: 100px 300px 300px 250px;
   }
   .gitHub{
