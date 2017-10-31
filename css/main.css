@@ -570,12 +570,22 @@ header h2 span{
   .image1{
     grid-row: 4/4;
     grid-column:1;
+    background: url('../images/datingInDPhone.jpg')no-repeat center;
+  }
+  .image2{
+    grid-row: 4/4;
+    grid-column:1;
+    background: url('../images/seatResPhone.jpg')no-repeat center;
+  }
+  .image2{
+    grid-row: 4/4;
+    grid-column:1;
     /*grid-area:b;
     width:50%;
     height:0;
     margin:0;*/
 
-    background: url('../images/datingInDPhone.jpg')no-repeat center;
+    background: url('../images/seatResPhone.jpg')no-repeat center;
   }
   .mediaContainer{
     grid-template-columns: 1fr 3fr 1fr;
